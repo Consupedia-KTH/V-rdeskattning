@@ -9,4 +9,3 @@ Skatta värderingar
 Korrelationsgraf
 
 
-Börja med skattningsverktyg 
