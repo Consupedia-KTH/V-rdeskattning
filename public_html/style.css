@@ -1,7 +1,7 @@
 #sortable1{
     background-color: dimgrey;
     border: 1px solid #eee;
-    width: 142px;
+    width: 170px;
     min-height: 20px;
     list-style-type: none;
     margin: 0;
@@ -13,13 +13,15 @@
     margin: 0 5px 5px 5px;
     padding: 5px;
     font-size: 1.2em;
-    width: 120px;
+    width: 170px;
+
   }
 
     #sortable2 { 
     list-style-type: none; 
     margin: 0; padding: 0; 
-    width: 450px; 
+    
+    height: 300px;
     }
   #sortable2 li { 
       margin: 3px 3px 3px 0; 
@@ -27,15 +29,14 @@
 /*       float: left; *//*Gör att man inte kan dra tillbaka list-objekt tll grid*/
        width: 120px; 
 
-        
        font-size: inherit; 
        text-align: center; 
   }
 
 #mainBox{
     
-    width: 500px;
-    height: 400px;
+    width: 350px;
+    height: 600px;
     background-color: darkslategray;
     float: left;
     
@@ -43,13 +44,13 @@
 #backBox{
     
     width: 100%;
-    height: 400px;
+    height: 600px;
     background-color: #4c4c4c;
     
 }
-#pieChart{
-    width:100px;
-    height:100px;
+#pieBox{
+    width:500px;
+    height:500px;
     float: left;
     
 }

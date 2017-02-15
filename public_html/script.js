@@ -74,11 +74,11 @@ function calc(){
 }
 function print(){
     document.getElementById('output').innerHTML =
-            "Environment: "+ values.env + 
-            " Health: " + values.health + 
-            " Justice: " + values.just +
-            " Price: " + values.price +
-            " Quality: " + values.quality;
+            "Environment: "+ values.env + "%"+ 
+            " Health: " + values.health + "%"+
+            " Justice: " + values.just +"%"+
+            " Price: " + values.price +"%"+
+            " Quality: " + values.quality+"%";
     
 }
 
