@@ -28,22 +28,37 @@ function calc(){
 
         $.each($('#sortable1 li'), function(index, item) {
             console.log("in each");//debug
+
+            var type = $(this).data("type").split(" "); 
+            var size = type.length; 
+
+            for (var i = 0; i < type.length; i ++) { 
+                switch(type[i]) { 
+                    case 'enviornment': 
+                        values.env += 100 / type.length; 
+                        break; 
+                    case 'price': 
+                        values.price+= 100 / type.length; 
+                        break; 
+                }
+            }
+            print(); 
             //2 exempel
             
-            if ($(this).hasClass('environment')) //alla li:s som har environment i sig hamnar här
-            {
-                console.log("in if");
-                values.env += 100;
-                print();
-            }
-            if($(this).hasClass('environment' && 'price')) //kommer inte hit.. fastnar på tidigare if-sats
-            {
-                
-                values.env += 50;
-                values.price += 50;
-                print();
-                
-            }
+           // if ($(this).hasClass('environment')) //alla li:s som har environment i sig hamnar här
+           // {
+           //     console.log("in if");
+           //     values.env += 100;
+           //     print();
+           // }
+           // if($(this).hasClass('environment' && 'price')) //kommer inte hit.. fastnar på tidigare if-sats
+           // {
+           //     
+           //     values.env += 50;
+           //     values.price += 50;
+           //     print();
+           //     
+           // }
             //Moar if:s!
             //Implement formula!
             
