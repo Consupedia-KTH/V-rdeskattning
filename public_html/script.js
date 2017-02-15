@@ -38,7 +38,16 @@ function calc(){
                         values.env += 100 / type.length; 
                         break; 
                     case 'price': 
-                        values.price+= 100 / type.length; 
+                        values.price += 100 / type.length; 
+                        break; 
+                    case 'quality': 
+                        values.quality += 100 / type.length; 
+                        break; 
+                    case 'justice': 
+                        values.just += 100 / type.length; 
+                        break; 
+                    case 'health': 
+                        values.health += 100 / type.length; 
                         break; 
                 }
             }
