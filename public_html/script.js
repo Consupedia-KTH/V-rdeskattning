@@ -20,57 +20,53 @@ function reset(){
     values.quality = 0; 
 }
 
+
+
 function calc(){
         console.log("in calc"); //debug
         
         // Reset counter
         reset(); 
 
+        // Count elements
+        var total = 0; 
         $.each($('#sortable1 li'), function(index, item) {
-            console.log("in each");//debug
+            total += 1; 
+        }); 
+
+        // Calculate fraction
+        var fraction = 0; 
+        for (var i = 0; i < total; i++) { 
+            fraction += 100 / Math.pow(1.5,i); 
+        }
+
+        $.each($('#sortable1 li'), function(index, item) {
+            console.log(index);//debug
 
             var type = $(this).data("type").split(" "); 
             var size = type.length; 
 
             for (var i = 0; i < type.length; i ++) { 
+                var val = 100 * (((100 / type.length) / Math.pow(1.5, index)) / fraction); 
                 switch(type[i]) { 
                     case 'enviornment': 
-                        values.env += 100 / type.length; 
+                        values.env += val;  
                         break; 
                     case 'price': 
-                        values.price += 100 / type.length; 
+                        values.price += val;
                         break; 
                     case 'quality': 
-                        values.quality += 100 / type.length; 
+                        values.quality += val; 
                         break; 
                     case 'justice': 
-                        values.just += 100 / type.length; 
+                        values.just += val; 
                         break; 
                     case 'health': 
-                        values.health += 100 / type.length; 
+                        values.health += val; 
                         break; 
                 }
             }
             print(); 
-            //2 exempel
-            
-           // if ($(this).hasClass('environment')) //alla li:s som har environment i sig hamnar här
-           // {
-           //     console.log("in if");
-           //     values.env += 100;
-           //     print();
-           // }
-           // if($(this).hasClass('environment' && 'price')) //kommer inte hit.. fastnar på tidigare if-sats
-           // {
-           //     
-           //     values.env += 50;
-           //     values.price += 50;
-           //     print();
-           //     
-           // }
-            //Moar if:s!
-            //Implement formula!
-            
         });
 
             
