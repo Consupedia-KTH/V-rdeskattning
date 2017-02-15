@@ -11,8 +11,21 @@ $( function() {
 
 var values = {env : 0, health : 0, just : 0, price : 0, quality : 0} ;
 
+
+function reset(){ 
+    values.env = 0; 
+    values.health =0; 
+    values.just = 0; 
+    values.price = 0; 
+    values.quality = 0; 
+}
+
 function calc(){
         console.log("in calc"); //debug
+        
+        // Reset counter
+        reset(); 
+
         $.each($('#sortable1 li'), function(index, item) {
             console.log("in each");//debug
             //2 exempel
@@ -39,11 +52,12 @@ function calc(){
             
 }
 function print(){
-    document.getElementById('output').innerHTML ="Environment: "+ values.env + 
-                        " Health: " + values.health + 
-                        " Justice: " + values.just +
-                        " Price: " + values.price +
-                        " Quality: " + values.quality;
+    document.getElementById('output').innerHTML =
+            "Environment: "+ values.env + 
+            " Health: " + values.health + 
+            " Justice: " + values.just +
+            " Price: " + values.price +
+            " Quality: " + values.quality;
     
 }
 
