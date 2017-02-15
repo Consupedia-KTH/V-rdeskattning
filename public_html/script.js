@@ -5,7 +5,7 @@ $( function() {
             calc();
         },
       connectWith: ".connectedSortable"
-    }).disableSelection();
+    });
     
 });
 
@@ -67,6 +67,7 @@ function calc(){
                 }
             }
             print(); 
+            makePie();
         });
 
             
@@ -79,5 +80,46 @@ function print(){
             " Price: " + values.price +
             " Quality: " + values.quality;
     
+}
+
+
+
+function makePie(){
+    
+    var data = {
+    labels: [
+        "Environment",
+        "Health",
+        "Justice",
+        "Price",
+        "Quality"
+    ],
+    datasets: [
+        {
+            data: [values.env, values.health, values.just, values.price, values.quality],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)'
+            ]
+        }]
+    };
+    
+    // For a pie chart
+    var ctx = document.getElementById("pieChart");
+    //ctx.canvas.width = 300;
+    //ctx.canvas.height = 300;
+    
+    var myPieChart = new Chart(ctx,{
+    type: 'pie',
+    data: data
+//    responsive: true,
+//    
+//maintainAspectRatio: false
+    //options: options
+    });
+
 }
 
