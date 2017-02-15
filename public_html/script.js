@@ -86,6 +86,11 @@ function print(){
 
 function makePie(){
     
+    var options = { 
+    responsive: true,
+    maintainAspectRatio: true
+    };
+
     var data = {
     labels: [
         "Environment",
@@ -114,11 +119,8 @@ function makePie(){
     
     var myPieChart = new Chart(ctx,{
     type: 'pie',
-    data: data
-//    responsive: true,
-//    
-//maintainAspectRatio: false
-    //options: options
+    data: data,
+    options: options
     });
 
 }
